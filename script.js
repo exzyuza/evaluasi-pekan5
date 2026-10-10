@@ -189,6 +189,7 @@ const HARGA_ROTI = 15000;
 const TARIF_PAJAK = 0.11;
 let jumlahKopi = 3;
 let jumlahRoti = "2";
+//FIX: angka 2 pada jumlahRoti harus dikonversi ke number agar perhitungan subtotal benar. Gunakan Number(jumlahRoti) saat menghitung subtotal.
 let transaksiSelesai = 0;
 const diskon = 10000;
 
@@ -197,29 +198,39 @@ let jumlahItem = jumlahKopi + Number(jumlahRoti);
 
 // Subtotal. Seharusnya: 84000
 let subtotal = HARGA_KOPI * jumlahKopi + HARGA_ROTI * Number(jumlahRoti);
+//FIX: Pastikan jumlahRoti dikonversi ke number saat menghitung subtotal, karena sebelumnya jumlahRoti adalah string.
 
 // Pajak 11% dari subtotal setelah dipotong diskon 10000. Seharusnya: 8140
 let pajak = (subtotal - diskon) * TARIF_PAJAK;
+//FIX: tambah tanda kurung
 
 // Total bayar. Seharusnya: 82140
 let totalBayar = subtotal - diskon + pajak;
+//FIX: tambah titik koma di akhir baris
 
 // Pelanggan membayar 100000. Cukup? Seharusnya: true
 let uangBayar = 100000;
 let uangCukup = uangBayar >= totalBayar;
+//FIX: gunakan operator >= untuk memeriksa apakah uangBayar cukup untuk totalBayar
 
 // Kembalian. Seharusnya: 17860
 let kembalian = uangCukup ? uangBayar - totalBayar : 0;
+//FIX: tukar posisi uangBayar dan totalBayar agar kembalian dihitung dengan benar. Jika uangCukup false, kembalian = 0.
 
 // Jumlah item genap? Seharusnya: false
 let itemGenap = jumlahItem % 2 === 0;
+//FIX: === 1 diganti menjadi === 0 untuk memeriksa apakah jumlahItem genap. Jika jumlahItem % 2 === 0, maka itemGenap = true; jika tidak, itemGenap = false.
 
 // Transaksi selesai bertambah 1. Seharusnya: 1
 transaksiSelesai += 1;
+//FIX: baris asignment transaksiSelesai harus menggunakan operator += untuk menambah 1 ke nilai sebelumnya, bukan = 1 yang akan mengeset ulang nilainya menjadi 1 setiap kali dijalankan.
 
 // Kedai berganti nama. Seharusnya "Kedai Senja Baru"
 namaKedai = "Kedai Senja Baru";
+//FIX: hapus let karena namaKedai sudah dideklarasikan sebelumnya. Gunakan assignment langsung untuk mengubah nilainya.
 
+//Tarif pajak tidak boleh diubah. Seharusnya tetap 0.11
+//FIX: TARIF_PAJAK dideklarasikan sebagai const, sehingga tidak bisa diubah. Pastikan tidak ada assignment baru ke TARIF_PAJAK.
 console.log(
   namaKedai,
   jumlahItem,
@@ -231,3 +242,4 @@ console.log(
   itemGenap,
   transaksiSelesai
 );
+
