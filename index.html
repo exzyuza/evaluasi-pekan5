@@ -7,13 +7,14 @@
     <link rel="stylesheet" href="eval5.css">
 </head>
 <body>
-    <!-- Header / Navbar -->
+    <a class="skip-link" href="#konten">Lewati ke konten</a>
+
     <header>
-        <nav class="navbar">
-            <div class="logo">
-                <span class="logo-icon">☕</span>
-                <h1>Kedai Senja</h1>
-            </div>
+        <nav class="navbar" aria-label="Navigasi utama">
+            <a class="logo" href="#home" aria-label="Kedai Senja, beranda">
+                <span class="logo-icon" aria-hidden="true">☕</span>
+                <span class="logo-name">Kedai Senja</span>
+            </a>
             <ul class="nav-menu">
                 <li><a href="#home">Beranda</a></li>
                 <li><a href="#menu">Menu</a></li>
@@ -23,70 +24,68 @@
         </nav>
     </header>
 
-    <!-- Hero Section -->
-    <section id="home" class="hero">
-        <div class="hero-content">
-            <h2>Selamat Datang di <span>Kedai Senja</span></h2>
-            <p>Tempat di mana kopi bertemu cerita, dan senja menjadi saksi.</p>
-            <button id="btnPesan" class="btn-primary">Pesan Sekarang</button>
-        </div>
-    </section>
-
-    <!-- Menu Section -->
-    <section id="menu" class="menu-section">
-        <h2 class="section-title">Menu Favorit</h2>
-        <div class="menu-grid">
-            <div class="menu-card">
-                <div class="menu-icon">☕</div>
-                <h3>Kopi Senja</h3>
-                <p>Espresso dengan sentuhan karamel dan susu.</p>
-                <span class="price">Rp 25.000</span>
+    <main id="konten">
+        <section id="home" class="hero" aria-labelledby="judul-beranda">
+            <div class="hero-content">
+                <h1 id="judul-beranda">Selamat Datang di <span>Kedai Senja</span></h1>
+                <p>Tempat di mana kopi bertemu cerita, dan senja menjadi saksi.</p>
+                <button id="btnPesan" class="btn-primary" type="button">Lihat Menu</button>
             </div>
-            <div class="menu-card">
-                <div class="menu-icon">🍵</div>
-                <h3>Teh Rempah</h3>
-                <p>Teh hangat dengan campuran rempah pilihan.</p>
-                <span class="price">Rp 18.000</span>
-            </div>
-            <div class="menu-card">
-                <div class="menu-icon">🥐</div>
-                <h3>Croissant Butter</h3>
-                <p>Pastry renyah dengan mentega premium.</p>
-                <span class="price">Rp 22.000</span>
-            </div>
-            <div class="menu-card">
-                <div class="menu-icon">🍰</div>
-                <h3>Cheese Cake</h3>
-                <p>Kue lembut dengan topping keju melimpah.</p>
-                <span class="price">Rp 30.000</span>
-            </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Tentang Section -->
-    <section id="tentang" class="about-section">
-        <h2 class="section-title">Tentang Kami</h2>
-        <p>
-            Kedai Senja berdiri sejak tahun 2020, hadir sebagai tempat singgah 
-            bagi siapa saja yang ingin menikmati kopi terbaik sambil menikmati 
-            indahnya langit senja. Kami percaya setiap cangkir kopi menyimpan cerita.
-        </p>
-    </section>
+        <section id="menu" class="menu-section" aria-labelledby="judul-menu">
+            <h2 id="judul-menu" class="section-title">Menu Favorit</h2>
+            <div class="menu-grid">
+                <article class="menu-card">
+                    <div class="menu-icon" aria-hidden="true">☕</div>
+                    <h3>Kopi Senja</h3>
+                    <p>Espresso dengan sentuhan karamel dan susu.</p>
+                    <span class="price">Rp 25.000</span>
+                </article>
+                <article class="menu-card">
+                    <div class="menu-icon" aria-hidden="true">🍵</div>
+                    <h3>Teh Rempah</h3>
+                    <p>Teh hangat dengan campuran rempah pilihan.</p>
+                    <span class="price">Rp 18.000</span>
+                </article>
+                <article class="menu-card">
+                    <div class="menu-icon" aria-hidden="true">🥐</div>
+                    <h3>Croissant Butter</h3>
+                    <p>Pastry renyah dengan mentega premium.</p>
+                    <span class="price">Rp 22.000</span>
+                </article>
+                <article class="menu-card">
+                    <div class="menu-icon" aria-hidden="true">🍰</div>
+                    <h3>Cheese Cake</h3>
+                    <p>Kue lembut dengan topping keju melimpah.</p>
+                    <span class="price">Rp 30.000</span>
+                </article>
+            </div>
+        </section>
 
-    <!-- Kontak Section -->
-    <section id="kontak" class="contact-section">
-        <h2 class="section-title">Hubungi Kami</h2>
-        <p>📍 Jl. Senja Indah No. 17, Jakarta</p>
-        <p>📞 (021) 1234-5678</p>
-        <p>✉️ hello@kedaisenja.id</p>
-    </section>
+        <section id="tentang" class="about-section" aria-labelledby="judul-tentang">
+            <h2 id="judul-tentang" class="section-title">Tentang Kami</h2>
+            <p>
+                Kedai Senja berdiri sejak tahun 2020, hadir sebagai tempat singgah
+                bagi siapa saja yang ingin menikmati kopi terbaik sambil menikmati
+                indahnya langit senja. Kami percaya setiap cangkir kopi menyimpan cerita.
+            </p>
+        </section>
 
-    <!-- Footer -->
+        <section id="kontak" class="contact-section" aria-labelledby="judul-kontak">
+            <h2 id="judul-kontak" class="section-title">Hubungi Kami</h2>
+            <address>
+                <p>📍 Jl. Senja Indah No. 17, Jakarta</p>
+                <p>📞 <a href="tel:+622112345678">(021) 1234-5678</a></p>
+                <p>✉️ <a href="mailto:hello@kedaisenja.id">hello@kedaisenja.id</a></p>
+            </address>
+        </section>
+    </main>
+
     <footer>
         <p>&copy; <span id="tahun"></span> Kedai Senja. Semua hak dilindungi.</p>
     </footer>
 
-    <!-- Pemanggil JavaScript Eksternal -->
     <script src="script.js"></script>
 </body>
 </html>
